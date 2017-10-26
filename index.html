@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+  
+      <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+          <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+          <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+          <script src="https://npmcdn.com/react-router@2.4.0/umd/ReactRouter.min.js"></script>
+          
+          <style>
+          body {
+  background-color: #FFCC00;
+  padding: 10px;
+  margin: 10px 0px 40px 0px;
+}
+h1, h2, p, ul, li {
+  font-family: Helvetica, Arial, sans-serif;
+}
+p{
+  font-size: 18px;
+}
+ul.header li {
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+}
+ul.header {
+  background-color: #111;
+  padding: 0;
+}
+ul.header li a {
+  color: #FFF;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 20px;
+  display: inline-block;
+}
+.content {
+  background-color: #FFF;
+  padding: 20px;
+}
+.content h2 {
+  padding: 0;
+  margin: 0;
+}
+.content li {
+  margin-bottom: 10px;
+}
+.active {
+  background-color: #0099FF;
+}
+.myproject{
+  margin-left: 40px; 
+}
+#gap{
+  color:  #808080;
+  text-align: center;
+  font-size: 25px;
+}
+#gap2{
+
+  margin-left: 0px;
+}
+h1 {
+
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    text-align: center;
+}
+footer.navbar-default.navbar-fixed-bottom
+ {
+      background:black;
+      color:white;
+      padding:1em 0;
+      margin: 0px 10px;
+ }
+ footer.navbar-default.navbar-fixed-bottom p
+ {
+      margin: 0;
+      text-align: center;
+ }
+
+          </style>
+          
+          <title>My profile</title>
+      </head>
+  
+<body>
+  
+  <div id="container"></div>
+  
+          <script type="text/babel">
+
+            var { Router,
+                  Route,
+                  IndexRoute,
+                  IndexLink,
+                  browserHistory,
+                  Link } = ReactRouter;
+
+
+
+                    var destination = document.querySelector("#container");
+
+                    var App = React.createClass({
+  render: function() {
+    return (
+      <div>
+        <h1>Youssef Zerkani's page</h1>
+        <ul className="header">
+         
+          <li><IndexLink to="/" activeClassName="active">Home</IndexLink></li>
+          <li><Link to="/stuff" activeClassName="active">Project</Link></li>
+          <li><Link to="/contact" activeClassName="active">Contact</Link></li>
+        
+        </ul>
+
+         <footer className="navbar-default navbar-fixed-bottom">
+               <div className="container">
+                    <p className="text-white">By Youssef Zerkani 2016</p>
+               </div>
+          </footer>
+
+        <div className="content">
+        {this.props.children}
+        
+       
+
+        </div>
+      </div>
+    )
+  }
+});
+
+var Home = React.createClass({
+  render: function() {
+      return (
+        <div>
+         
+
+           <div className="container">
+          <p className="text-primary">My name is Youssef Zerkani. Currently I am 4th year student at Helsinki Metropolia UAS for a Bachelor’s Degree in Information Technology. I am expecting to graduate from the school in summer of 2017. I had some experiences in the field of Web Development, and Software testing. I would like to take the opportunity to gain more experience, as I always wish to be a Frontend Developer & Software Tester <br /><br />
+
+          I am a fast learner and can absorb a big amount of knowledge in a short time. Mostly I’ve being using technologies such as HTML, CSS, PHP, and MySQL for web development. However, in the field of software testing, I did manual testing for <b> Morrr Oy </b> company (Usability testing), and also Winhawille for Metropolia UAS.   <br /><br />
+
+          I just finished my internship as a Software developer trainee for <b>Bookndo</b> company.
+          My task was related to Frontend more than backend development. Besides that, I did other tasks, related to the server management, translation (using OneSkyApp), and Database management. In the past I worked as a Back Office Agent in a company called <b>Phone Assistance</b> where my task was to update the company’s database; the other part of my task was to assist, and address my customer’s inquiries on the phone. I also have worked as an intern in Espoo library. This was part of my internship during my Finnish studies.
+          <br /><br />
+
+          I have a strong motivation to learn and develop myself.  I am flexible, active and easy going person. I can speak several languages. Arabic is my mother tongue. Besides that, I am good in French, English and Finnish. So as you may observe, I consider myself as an International engineer. 
+
+          </p>
+           
+  
+          <p>Yours sincerely, <br /><br />
+
+          <b>Youssef Zerkani.</b>
+          </p>
+
+        </div>
+        </div>
+      );
+    }
+});
+
+
+var Contact = React.createClass({
+  render: function() {
+      return (
+      <div>
+         <h1>Youssef Zerkani's page</h1>
+            <ul className="header">
+          <li><IndexLink to="/" activeClassName="active">Home</IndexLink></li>
+          <li><Link to="/stuff" activeClassName="active">Project</Link></li>
+          <li><Link to="/contact" activeClassName="active">Contact</Link></li>
+            </ul>
+
+           <footer className="navbar-default navbar-fixed-bottom">
+               <div className="container">
+                    <p className="text-white">By Youssef Zerkani 2016</p>
+               </div>
+          </footer>    
+
+           <div className="container">
+            <h2>Personal Information</h2> <br />
+              <div className="row">
+                <div className="col-xs-12 col-sm-6 col-md-8">
+                    <p id="gap2" className="col-md-4"><b>Name </b> </p> <p>Youssef Zerkani </p>
+                    
+
+                    <p id="gap2" className="col-md-4"><b>Date of Birth </b> </p> <p>10th Mai 1982</p>
+                    
+
+                    <p id="gap2" className="col-md-4"><b>Nationality </b> </p> <p>Moroccan, Finnish </p>
+
+                     <p id="gap2" className="col-md-4"><b>@Email </b> </p> <p>You.Zerkani@gmail.com </p>
+
+                    <p id="gap2" className="col-md-4"><b>Mobile Number</b></p> <p className="glyphicon-phone"> 044 276 3434
+                    </p>
+                        
+                    <p id="gap2" className="col-md-4"><b>Linkedin </b> </p> <p> <a href="https://fi.linkedin.com/in/youssefzerkani" className="btn btn-info">My profile</a>
+                    </p>
+                      </div>
+                      <div className="col-xs-6 col-md-4">
+                     <a href="/react/SinglePage/index.html">
+                     <img src="me.jpg" className="img-circle img-responsive" alt="my photo"  width="304" height="236"  />
+                    </a>           
+                    </div>
+           </div> 
+           </div>           
+        </div>
+      );
+    }
+});
+ 
+var Stuff = React.createClass({
+  render: function() {
+      return (
+        <div>
+               <h1>Youssef Zerkani's page</h1>
+               <ul className="header">
+         
+          <li><IndexLink to="/" activeClassName="active">Home</IndexLink></li>
+          <li><Link to="/stuff" activeClassName="active">Project</Link></li>
+          <li><Link to="/contact" activeClassName="active">Contact</Link></li>
+        
+                </ul>
+
+
+                   <footer className="navbar-default navbar-fixed-bottom">
+                      <div className="container">
+                        <p className="text-white">By Youssef Zerkani 2016</p>
+                      </div>
+                  </footer>
+
+
+
+
+<div className="container">
+
+             <ol>
+    
+          <li> <p className="myproject"><h3>January 2016</h3></p></li> 
+                <h3 id="gap">Responsive Web page</h3>
+            <p><b>Description:</b> The goal behind this project is to build up a Responsive Web site using HTML5, CSS & JavaScript. It is for my own learning.<br />
+            <b>Link:</b>  <a href="http://users.metropolia.fi/~youssefz/Project/Res">Resonsive Website-Gym</a>
+       </p>
+<hr width="50%" />
+            <li> <p className="myproject"><h3>10/2015 – 11/2015</h3></p></li> 
+                <h3 id="gap">Website Testing Project </h3>
+            <p><b>Description:</b>My responsibilities included manual testing, usability testing, security testing, heuristic evaluation of the main website of Morrr Oy.
+            A report was submitted to the company that contains all bugs, errors, defects about Morrr website.
+       </p>
+<hr width="50%" />
+            <li> <p className="myproject"><h3>November 2015</h3></p></li> 
+                <h3 id="gap">Responsive Website Basics: Code with HTML, CSS, and JavaScript</h3>
+
+                <p><b>Description:</b>Online course at Couresra.org :The purpose of this project is to practice more  HTML, CSS & JavaScript in order to create a Responsive Website.<br />
+                 <b>Link:</b> <a href="http://users.metropolia.fi/~youssefz/Assignment2/index.html">Coursera Assignment for Web programming</a>
+       </p>
+<hr width="50%" />
+
+             <li> <p className="myproject"><h3>JAN – MAY 2015</h3></p></li> 
+                <h3 id="gap">Project for Web programming course</h3>
+
+                <p><b>Description:</b>The goal of this application is to be able to generate HTML pages using PHP scripting, able to use MySQL database in the backend and JavaScript on the client side.  New users  will be able to register to the database, then later login and search for other users<br />
+                 <b>Link:</b> <a href="http://users.metropolia.fi/~youssefz/Client%20Side/sass/project">Web Application using PHP and MySQL</a>
+       </p>
+
+          </ol>
+          </div>
+        </div>
+      );
+    }
+});
+
+
+
+
+                    ReactDOM.render(
+                     
+                     <Router>
+                              <Route path="/" component={App} history={browserHistory}>
+                                <IndexRoute component={Home}/>     
+                              </Route>
+
+                              <Route path="stuff" component={Stuff} />
+
+                              <Route path="contact" component={Contact} />
+                                
+                     </Router>,
+                                destination
+
+                    );
+         </script>
+</body>
+</html>
